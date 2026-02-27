@@ -1,0 +1,36 @@
+public class BurbujaOptimizado {
+
+    public static void burbujaMejorado(int[] arreglo) {
+        int n = arreglo.length;
+        int limite = n - 1;
+
+        while (limite > 0) {
+            int ultimaPosicionIntercambio = 0;
+
+            for (int i = 0; i < limite; i++) {
+                if (arreglo[i] > arreglo[i + 1]) {
+                    // Intercambio
+                    int temp = arreglo[i];
+                    arreglo[i] = arreglo[i + 1];
+                    arreglo[i + 1] = temp;
+
+                    // Guardamos la última posición donde hubo intercambio
+                    ultimaPosicionIntercambio = i;
+                }
+            }
+
+            // Reducimos el límite hasta la última posición intercambiada
+            limite = ultimaPosicionIntercambio;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] datos = {5, 3, 8, 4, 2};
+
+        burbujaMejorado(datos);
+
+        for (int num : datos) {
+            System.out.print(num + " ");
+        }
+    }
+}
