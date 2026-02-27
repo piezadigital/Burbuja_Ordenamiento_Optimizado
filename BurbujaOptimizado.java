@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class BurbujaOptimizado {
 
     public static void burbujaMejorado(int[] arreglo) {
@@ -26,9 +28,11 @@ public class BurbujaOptimizado {
 
     public static void main(String[] args) {
         int[] datos = {5, 3, 8, 4, 2};
-
+        System.out.print("Arreglo original: ");
+        System.out.println(Arrays.toString(datos));
+        
+        System.out.print("Arreglo ordenado: ");
         burbujaMejorado(datos);
-
         for (int num : datos) {
             System.out.print(num + " ");
         }
